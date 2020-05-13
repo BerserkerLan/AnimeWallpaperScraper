@@ -16,8 +16,8 @@ for page_num in range(1, 2000):
     for div in wallpaper_divs:
         print(div)
         print("Page number" + str(page_num))
-        status_code = requests.get(div['src'].replace('thumb-', ''), headers=headers).status_code
-        if (not('favicon' in div['src']) and not(status_code == 404)): 
+        # status_code = requests.get(div['src'].replace('thumb-', ''), headers=headers).status_code
+        if (not('favicon' in div['src'])): 
             file1.write(str((div['src'].replace('thumb-', '') + " " + div['title']).encode('utf8')) + "\n")
 
 file1.close()
